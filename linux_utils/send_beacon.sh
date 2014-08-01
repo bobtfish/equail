@@ -12,6 +12,9 @@ ascii2hex() {
 
 NAME=`ascii2hex $1`
 
+# Turn rfkill off to make this work from boot
+rfkill unblock all
+
 # bring up the host controller if not already
 sudo hciconfig hci0 up
 
